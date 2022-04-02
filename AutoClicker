@@ -1,1 +1,14 @@
-
+local Player = game:GetService("Players").LocalPlayer
+	local Mouse = Player:GetMouse()
+	local Clicking = false
+	Mouse.KeyDown:Connect(function(Key)
+		if Key == "z" then
+			Clicking = not Clicking
+			if Clicking == true then
+				repeat
+					mouse1click()
+					wait(0.001)
+				until Clicking == false
+			end
+		end
+	end)
